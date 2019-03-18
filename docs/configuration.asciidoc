@@ -147,7 +147,7 @@ try {
     $client->search($searchParams);
 } catch (Elasticsearch\Common\Exceptions\TransportException $e) {
     $previous = $e->getPrevious();
-    if ($previous instanceof 'Elasticsearch\Common\Exceptions\MaxRetriesException') {
+    if ($previous instanceof Elasticsearch\Common\Exceptions\MaxRetriesException) {
         echo "Max retries!";
     }
 }
